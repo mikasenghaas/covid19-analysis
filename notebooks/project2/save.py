@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from .visualisations import *
+import json
 
 def save_csv(data, path, filename, index=False, force=True):
     """
@@ -20,25 +21,33 @@ def save_csv(data, path, filename, index=False, force=True):
         except: None
     data.to_csv(f"{path}{filename}.csv", index=index)
 
-def save_numerical_report(summary, path, filename, force=True, save_to='csv'):
+def save_json(dict, path, filename, force=True):
+    if force:
+        try: os.makedirs(path)
+        except: None
+
+    with open(path + filename, 'w') as outfile:
+        json.dump(dict, outfile)
+
+def save_dict(dict, path, filename, force=True, save_to='csv'):
     """
-    Function to save the SUMMARY['dataset_name`] dictionary into either `csv` or `json` format for further use or extensive inspection by specifying a having path and filename. 
+    Function to save a Python dictionary into either `csv` or `json` format for further use or extensive inspection by specifying a having path and filename. 
 
     Parameters:
-        summary         : dict (SUMMARY dict holding information about each column of the dataset)
+        dict            : dict (SUMMARY dict holding information about each column of the dataset)
         path            : str (Relative path to location of saving)
         filename        : str (Filename (without suffix `.csv` or `.json`))
         save_to         : str (either `csv` or `json`)
     Return: None 
     """
-    summary_dataframe = pd.DataFrame(summary)
+    dataframe = pd.DataFrame(dict)
     
     if force:
         try: os.makedirs(path)
         except: None
 
-    if save_to == 'csv': summary_dataframe.to_csv(f'{path}/summary_{filename}.csv')
-    elif save_to == 'json': summary_dataframe.to_json(f'{path}/summary_{filename}.json')
+    if save_to == 'csv': dataframe.to_csv(f'{path}/{filename}.csv')
+    elif save_to == 'json': dataframe.to_json(f'{path}/{filename}.json')
     else: raise NameError(f"'{save_to}' not defined. Try saving to 'csv' or 'json' format.")
     print(f"Saved: {filename}.{save_to} to {path}")
 
