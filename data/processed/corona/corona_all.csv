@@ -1,4 +1,4 @@
-Date,Region Code,Confirmed Addition,Deceased Addition,Population,Relative Infections,Relative Deceased
+date,region,absolute_infections,absolute_deaths,population,relative_infections,relative_deaths
 2020-01-02,Nordrhein-Westfalen,1,0,17932651,5.576420351904467e-06,0.0
 2020-01-07,Nordrhein-Westfalen,1,0,17932651,5.576420351904467e-06,0.0
 2020-01-09,Nordrhein-Westfalen,1,1,17932651,5.576420351904467e-06,5.576420351904467e-06
