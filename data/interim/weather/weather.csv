@@ -1,4 +1,4 @@
-date,region_code,relative_humidity_surface,solar_radiation,surface_pressure,temperature_above_ground,total_precipiation,UV_index,wind_speed,region
+date,region_code,relative_humidity_surface,solar_radiation,surface_pressure,temperature_above_ground,total_precipiation,uv_index,wind_speed,region
 2020-02-13,DE-BB,76.33744399999999,1824290.33235,2403340.782011,3.4015730000000417,0.003355,2.777806,4.542822,Brandenburg
 2020-02-13,DE-BE,76.065297,1786373.222902,2408181.7027970003,3.6946330000000103,0.0035229999999999997,4.671329,4.761508999999999,Berlin
 2020-02-13,DE-BW,80.113988,1505759.748267,2290157.738271,3.077143000000035,0.008013,4.268546,4.467023999999999,Baden-Württemberg
